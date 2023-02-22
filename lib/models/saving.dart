@@ -1,5 +1,6 @@
-import 'package:finance_app_ui/helpers/enums.dart';
 import 'package:flutter/foundation.dart';
+
+import '../helpers/enums.dart';
 
 @immutable
 class Saving {

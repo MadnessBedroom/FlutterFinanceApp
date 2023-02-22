@@ -20,23 +20,21 @@ class CardsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 27, vertical: 27).r,
         physics: const BouncingScrollPhysics(),
-        child: Expanded(
-          child: Column(
-            children: [
-              _cardList(),
-              const SizedBox(height: 16),
-              DottedIconButton(
-                icon: Icons.add,
-                text: 'Add Credit Card',
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AddCard(),
-                  ),
+        child: Column(
+          children: [
+            _cardList(),
+            const SizedBox(height: 16),
+            DottedIconButton(
+              icon: Icons.add,
+              text: 'Add Credit Card',
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddCard(),
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

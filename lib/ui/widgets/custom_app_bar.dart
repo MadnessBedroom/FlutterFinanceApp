@@ -8,6 +8,7 @@ class CustomAppBar extends AppBar {
     Key? key,
     required String title,
     required BuildContext context,
+    bool showLeading = true,
   }) : super(
           key: key,
           title: Text(
@@ -20,10 +21,13 @@ class CustomAppBar extends AppBar {
           ),
           backgroundColor: Colors.transparent,
           centerTitle: true,
-          leading: IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: const Icon(Icons.arrow_back),
-            color: AppColors.primaryText,
+          leading: Visibility(
+            visible: showLeading,
+            child: IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: const Icon(Icons.arrow_back),
+              color: AppColors.primaryText,
+            ),
           ),
         );
 }

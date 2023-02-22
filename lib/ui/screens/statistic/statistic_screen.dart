@@ -1,9 +1,9 @@
-import 'package:finance_app_ui/ui/widgets/payment_card_list.dart';
-import 'package:finance_app_ui/ui/widgets/saving_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/app_colors.dart';
+import '../../widgets/payment_card_list.dart';
+import '../../widgets/saving_list.dart';
 import '../home/widgets/balance_card.dart';
 import '../home/widgets/header_section.dart';
 

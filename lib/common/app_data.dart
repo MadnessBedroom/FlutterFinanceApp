@@ -1,5 +1,8 @@
-import 'package:finance_app_ui/helpers/enums.dart';
+import 'package:faker/faker.dart';
+import 'package:finance_app_ui/helpers/tools.dart';
 
+import '../helpers/enums.dart';
+import '../models/billing.dart';
 import '../models/onboarding_item.dart';
 import '../models/payment.dart';
 import '../models/saving.dart';
@@ -29,8 +32,8 @@ class AppData {
   static List<Payment> payments = [
     const Payment(cardNo: '2298 1268 3398 9874', balance: 2885.00),
     const Payment(cardNo: '2298 1268 3398 9875', balance: 3860.00),
-    // const Payment(cardNo: '2298 1268 3398 9876', balance: 1990.00),
-    // const Payment(cardNo: '2298 1268 3398 9877', balance: 2090.00),
+    const Payment(cardNo: '2298 1268 3398 9876', balance: 1990.00),
+    const Payment(cardNo: '2298 1268 3398 9877', balance: 2090.00),
   ];
 
   static List<Saving> savings = [
@@ -68,6 +71,96 @@ class AppData {
       progress: 100,
       icon: 'assets/icons/108.png',
       status: SavingStatus.done,
+    ),
+  ];
+
+  static List<Billing> billings = [
+    /// send
+    Billing(
+      title: getRandonName(),
+      amount: 123,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.send,
+    ),
+    Billing(
+      title: getRandonName(),
+      amount: 320,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.expenses,
+      historyType: HistoryType.send,
+    ),
+    Billing(
+      title: getRandonName(),
+      amount: 129,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.send,
+    ),
+    Billing(
+      title: getRandonName(),
+      amount: 256,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.send,
+    ),
+    Billing(
+      title: getRandonName(),
+      amount: 289,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.expenses,
+      historyType: HistoryType.send,
+    ),
+
+    /// request
+    Billing(
+      title: getRandonName(),
+      amount: 137,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.request,
+    ),
+
+    Billing(
+      title: getRandonName(),
+      amount: 137,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.request,
+    ),
+
+    Billing(
+      title: getRandonName(),
+      amount: 137,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.request,
+    ),
+
+    Billing(
+      title: getRandonName(),
+      amount: 137,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.request,
+    ),
+
+    Billing(
+      title: getRandonName(),
+      amount: 137,
+      date: faker.date.dateTime(),
+      avatar: getAmountAvatar(),
+      billingType: BillingType.income,
+      historyType: HistoryType.request,
     ),
   ];
 }

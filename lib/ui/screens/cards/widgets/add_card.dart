@@ -17,6 +17,7 @@ class AddCard extends StatelessWidget {
       appBar: CustomAppBar(title: 'Add Card', context: context),
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24).r,
           child: Form(
             child: Column(
@@ -25,6 +26,7 @@ class AddCard extends StatelessWidget {
                 InputHelperText(data: 'Card Number'),
                 AppConstants.sizedBoxHeightNormal,
                 addCardTextFormFiled(
+                  inputType: TextInputType.number,
                   suffixIcon: Padding(
                     padding: const EdgeInsets.only(right: 10).r,
                     child: Image.asset(
@@ -44,7 +46,9 @@ class AddCard extends StatelessWidget {
                         children: [
                           InputHelperText(data: 'Expired Date'),
                           AppConstants.sizedBoxHeightNormal,
-                          addCardTextFormFiled(),
+                          addCardTextFormFiled(
+                            inputType: TextInputType.datetime,
+                          ),
                         ],
                       ),
                     ),
@@ -77,11 +81,11 @@ class AddCard extends StatelessWidget {
                 AppConstants.sizedBoxTextAndInput,
                 InputHelperText(data: 'Address Line 1'),
                 AppConstants.sizedBoxTextAndInput,
-                addCardTextFormFiled(),
+                addCardTextFormFiled(inputType: TextInputType.streetAddress),
                 AppConstants.sizedBoxTextAndInput,
                 InputHelperText(data: 'Address Line 2'),
                 AppConstants.sizedBoxTextAndInput,
-                addCardTextFormFiled(),
+                addCardTextFormFiled(inputType: TextInputType.streetAddress),
                 const SizedBox(height: 56),
                 CustomRoundedButton(border: false, lable: 'Save Card'),
               ],
